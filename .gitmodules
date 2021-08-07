@@ -1,0 +1,9 @@
+[submodule "chemacs2"]
+	path = chemacs-2
+	url = https://github.com/weidaolee/emacs-chemacs2.git
+[submodule "centaur"]
+	path = centaur
+	url = https://github.com/weidaolee/emacs-centaur.git
+[submodule "doom"]
+	path = doom
+	url = https://github.com/weidaolee/emacs-doom.git
