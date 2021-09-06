@@ -6,12 +6,11 @@ Let's define Emacs as a programmable text-oriented user interface,
 which can be customized through programming because it not necessarily 
 allows us to deal with files but we can do other things or actions 
 which are not file related.
-* Soft Links
+* Symbolic Link
 #+begin_src shell
 ln -s ~/emacs/chemacs-2 ~/.emacs.d
 ln -s ~/emacs/chemacs-2/emacs-profile.el ~/.emacs-profiles.el
 ln -s ~/emacs/.editorconfig ~/.editorconfig
-
 #+end_src
 * Doom Alias
 #+begin_src shell
