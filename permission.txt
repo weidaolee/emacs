@@ -1,0 +1,1 @@
+find . -name "*.org" -exec chmod a-w {} \;

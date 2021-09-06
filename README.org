@@ -1,0 +1,23 @@
+* Emacs
+You may think of Emacs as of a text editor which is certainly true, 
+but I would propose another definition.
+
+Let's define Emacs as a programmable text-oriented user interface, 
+which can be customized through programming because it not necessarily 
+allows us to deal with files but we can do other things or actions 
+which are not file related.
+* Soft Links
+#+begin_src shell
+ln -s ~/emacs/chemacs-2 ~/.emacs.d
+ln -s ~/emacs/chemacs-2/emacs-profile.el ~/.emacs-profiles.el
+ln -s ~/emacs/.editorconfig ~/.editorconfig
+
+#+end_src
+* Doom Alias
+#+begin_src shell
+alias centaur="emacs --with-profile centaur"
+alias doomacs="emacs --with-profile doom"
+alias doom="emacs/doom/bin/doom"
+#+end_src
+* TODO
+Reconsider centaur project.
