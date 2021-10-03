@@ -27,7 +27,7 @@ tab_width = 4
 # tab_width = 3
 
 # 2 space indentation
-[*.{c}]
+[*.{c,plantuml}]
 indent_style = space
 indent_size = 2
 tab_width = 2

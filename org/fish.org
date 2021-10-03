@@ -1,0 +1,47 @@
+* [[https://github.com/fish-shell/fish-shell][Fish]]
+* Installation
+#+begin_src shell
+sudo apt-add-repository ppa:fish-shell/release-3
+sudo apt-get update
+sudo apt-get install fish
+#+end_src
+* Set to default
+Check your fish path
+#+begin_src shell
+$ whereis fish
+fish: /usr/bin/fish /etc/fish /usr/share/fish /usr/share/man/man1/fish.1.gz
+#+end_src
+
+#+begin_src shell
+chsh -s /usr/bin/fish weidaolee
+#+end_src
+
+Use the following command if fish isn ’t already added to /etc/shells to permit fish to be your login shell:
+#+begin_src shell
+echo /usr/bin/fish | sudo tee -a /etc/shells
+#+end_src
+
+#+begin_src shell
+reboot now
+#+end_src
+* Alias
+#+begin_src shell
+alias xxx='xxxx'
+java -jar gateway-server-0.0.1-SNAPSHOT.jar
+#+end_src
+
+
+* Oh-my-fish
+#+begin_src shell
+curl -L https://get.oh-my.fish | fish
+#+end_src
+#+begin_src shell
+sudo apt-get install fonts-powerline
+omf install default; or omf theme default
+#+end_src
+* [[https://github.com/jorgebucaran/fisher][Fisherman]]
+#+begin_src shell
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+#+end_src
+
+#+RESULTS:

@@ -6,17 +6,59 @@ Let's define Emacs as a programmable text-oriented user interface,
 which can be customized through programming because it not necessarily 
 allows us to deal with files but we can do other things or actions 
 which are not file related.
+* Other tools
+** [[file:org/fish.org::*\[\[https://github.com/fish-shell/fish-shell\]\[Fish\]\]][Fish]]
+#+begin_src shell
+# key remap
+xmodmap -e "keycode 108 = minus underscore minus underscore"
+xmodmap -e "keycode 135 = equal plus equal plus"
+#+end_src
 * Symbolic Link
 #+begin_src shell
 ln -s ~/emacs/chemacs-2 ~/.emacs.d
 ln -s ~/emacs/chemacs-2/emacs-profile.el ~/.emacs-profiles.el
+
 ln -s ~/emacs/.editorconfig ~/.editorconfig
 #+end_src
 * Doom Alias
 #+begin_src shell
 alias centaur="emacs --with-profile centaur"
 alias doomacs="emacs --with-profile doom"
+
 alias doom="emacs/doom/bin/doom"
 #+end_src
-* TODO
-Reconsider centaur project.
+* Lang
+** Java:
+*** [[file:doom/modules/lang/java/README.org::*Prerequisites][Install Java]]
+#+begin_src shell
+sudo apt-get install openjdk-11-jdk
+
+sudo apt-get install openjdk-8-jdk
+#+end_src
+*** Install [[https://github.com/shyiko/jabba][jabba]] to manage multiple Java versions
+Install
+#+begin_src shell
+curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.jabba/jabba.sh
+
+jabba link system@1.11 /usr/lib/jvm/java-1.11.0-openjdk-amd64
+jabba link system@1.8 /usr/lib/jvm/java-1.8.0-openjdk-amd64
+
+echo "system@1.8" > .jabbarc
+
+echo "jabba use" > .bashrc
+
+java -version
+#+end_src
+** Bash:
+*** Install npm
+#+begin_src shell
+curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+sudo apt install npm
+#+end_src
+** Plantuml
+Install Graphviz
+#+begin_src shell
+sudo apt-get install -y graphviz
+#+end_src
