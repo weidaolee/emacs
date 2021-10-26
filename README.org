@@ -7,17 +7,16 @@ which can be customized through programming because it not necessarily
 allows us to deal with files but we can do other things or actions 
 which are not file related.
 * Other tools
-** [[file:org/fish.org::*\[\[https://github.com/fish-shell/fish-shell\]\[Fish\]\]][Fish]]
-#+begin_src shell
-# key remap
-xmodmap -e "keycode 108 = minus underscore minus underscore"
-xmodmap -e "keycode 135 = equal plus equal plus"
-#+end_src
+** [[https://github.com/sezanzeb/key-mapper][Key-remapper]]
+** [[file:./docs/fish.org][Fish]]
+** [[file:./docs/wechat.org][Wechat]]
+** [[file:./docs/fcitx.org][Fcitx]]
 * Symbolic Link
 #+begin_src shell
 ln -s ~/emacs/chemacs-2 ~/.emacs.d
 ln -s ~/emacs/chemacs-2/emacs-profile.el ~/.emacs-profiles.el
 
+ln -s ~/emacs/doom/doom.d ~/doom.d
 ln -s ~/emacs/.editorconfig ~/.editorconfig
 #+end_src
 * Doom Alias
@@ -39,13 +38,12 @@ sudo apt-get install openjdk-8-jdk
 Install
 #+begin_src shell
 curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.jabba/jabba.sh
+curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.jabba/jabba.fish
 
 jabba link system@1.11 /usr/lib/jvm/java-1.11.0-openjdk-amd64
 jabba link system@1.8 /usr/lib/jvm/java-1.8.0-openjdk-amd64
 
 echo "system@1.8" > .jabbarc
-
-echo "jabba use" > .bashrc
 
 java -version
 #+end_src
@@ -54,8 +52,6 @@ java -version
 #+begin_src shell
 curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
 sudo apt-get install -y nodejs
-
-sudo apt install npm
 #+end_src
 ** Plantuml
 Install Graphviz

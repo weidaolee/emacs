@@ -1,0 +1,25 @@
+* Install docker
+#+begin_src shell
+sudo apt update
+sudo apt install docker.io -y
+sudo usermod -aG docker $USER
+#+end_src
+* Install Wechat
+#+begin_src shell
+bash <(curl -L -s https://raw.githubusercontent.com/ygcaicn/ubuntu_qq/master/wechat.sh)
+#+end_src
+* To use
+#+begin_src shell
+wechat -h
+#+end_src
+
+#+RESULTS:
+| wechat     | [-h]      | [-i]    | [-f]     | [-c]   | [--start   | start] | [--remove] | [--instance] |      |      |     |       |      |        |
+| -h,        | --help    | Show    | help     |        |            |        |            |              |      |      |     |       |      |        |
+| -i,        | --install | Install | this     | script | to         | system |            |              |      |      |     |       |      |        |
+| -f,        | --force   | Force   | install  | or     | reinstall  |        |            |              |      |      |     |       |      |        |
+| -c,        | --clean   | Clean   | all      | wechat | container  |        |            |              |      |      |     |       |      |        |
+| --start    | Start     | wechat  |          |        |            |        |            |              |      |      |     |       |      |        |
+| --update   | Update    | script  |          |        |            |        |            |              |      |      |     |       |      |        |
+| --remove   | Remove    | this    | script   |        |            |        |            |              |      |      |     |       |      |        |
+| --instance | Create    | a       | instance | wechat | container, | you    | can        | create       | more | then | one | using | this | option |

@@ -1,0 +1,4 @@
+* Try this
+#+begin_src shell
+sudo locale-gen zh_TW.UTF-8
+#+end_src
