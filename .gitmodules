@@ -6,4 +6,9 @@
 	url = https://github.com/weidaolee/emacs-centaur.git
 [submodule "doom"]
 	path = doom
-	url = https://github.com/weidaolee/emacs-doom.git
+	url = git@github.com:weidaolee/emacs-doom.git
+	branch = stable
+[submodule "chemacs-2"]
+	path = chemacs-2
+	url = git@github.com:weidaolee/emacs-chemacs.git
+	branch = master
