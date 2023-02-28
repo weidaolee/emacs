@@ -11,7 +11,7 @@ trim_trailing_whitespace = true
 
 # Matches multiple files with brace expansion notation
 # Set default charset
-[*.{el,c,js,py,java}]
+[*.{el,c,js,py,org,java}]
 charset = utf-8
 
 # 4 space indentation
@@ -29,8 +29,14 @@ tab_width = 4
 # 2 space indentation
 [*.{c,plantuml}]
 indent_style = space
-indent_size = 2
-tab_width = 2
+indent_size = 4
+tab_width = 4
+
+# 1 space indentation
+[*.{org}]
+indent_style = space
+indent_size = 1
+tab_width = 1
 
 # Tab indentation (no size specified)
 [Makefile]
