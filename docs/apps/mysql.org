@@ -1,0 +1,77 @@
+* Remove
+#+begin_src shell
+sudo apt-get remove mysql-server mysql-client libmysqlclient-dev
+sudo apt-get remove mysql-server
+sudo apt-get autoremove mysql-server
+dpkg -l |grep ^rc|awk '{print $2}' |sudo xargs dpkg -P
+#+end_src
+
+* Install MySQL Server and Clint
+#+begin_src shell
+sudo apt-get install -u mysql-server
+sudo apt-get install -u mysql-client
+
+# C development toolkit
+sudo apt install -u libmysqlclient-dev
+
+sudo apt-get install -u mysql-server mysql-client libmysqlclient-dev
+#+end_src
+
+*   Config
+#+begin_src shell
+sudo mysql_secure_installation
+#+end_src
+#+begin_src
+Press y|Y for Yes, any other key for No: y
+There are three levels of password validation policy.....（使用密碼強度校驗元件） 輸入： 0
+New Password:（設定新密碼,並重復一遍)
+Do you wish to continue with the password provided?(Press y|Y for Yes, any other key for No) : y
+Remove anonymous users (刪除匿名使用者) n
+Disallow root login remotely(拒絕遠端root賬號登入） n
+Remove test database and access to it(移除test資料庫） n
+Reload privilege tables now (現在就重新載入許可權表） y
+#+end_src
+*   Login as root
+#+begin_src shell
+sudo mysql
+#+end_src
+
+#+begin_src sql
+use mysql;
+update user set authentication_string='' where user='root';
+alter user 'root'@'localhost' identified with mysql_native_password by '********';
+--ERROR 1819 (HY000): Your password does not satisfy the current policy requirements
+#+end_src
+
+#+begin_src sql
+SHOW VARIABLES LIKE 'validate_password%';
+#+end_src
+return
+|--------------------------------------+----------|
+| Variable_name                        |    Value |
+|--------------------------------------+----------|
+| validate_password_check_user_name    |      OFF |
+| validate_password_dictionary_file    |          |
+| validate_password_length             |        8 |
+| validate_password_mixed_case_count   |        1 |
+| validate_password_number_count       |        1 |
+| validate_password_policy             | *MEDIUM* |
+| validate_password_special_char_count |        1 |
+|--------------------------------------+----------|
+
+#+begin_src sql
+SET GLOBAL validate_password.policy=LOW;
+alter user 'root'@'localhost' identified with mysql_native_password by '********';
+#+end_src
+
+* Creat user
+#+begin_src sql
+CREATE USER 'weidaolee'@'%' IDENTIFIED BY 'password';
+CREATE USER 'weidaolee'@'localhost' IDENTIFIED BY 'password';
+
+GRANT ALL PRIVILEGES ON * . * TO 'weidaolee'@'%';
+GRANT ALL PRIVILEGES ON * . * TO 'weidaolee'@'localhost';
+#+end_src
+* Install mycli
+
+https://github.com/dbcli/mycli

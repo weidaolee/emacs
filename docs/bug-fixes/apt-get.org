@@ -1,0 +1,22 @@
+* Time: 2021-11-17-05:56
+** Title
+subprocess installed post-installation script returned error exit status 10
+** Priority
+*System Level*
+** Description
+Setting up libpaper1: *[PACKAGE]* (version) ...
+dpkg: error processing package *[PACKAGE]*: *[PACKAGE]* (--configure):
+ subprocess installed post-installation script returned error exit status 10
+Processing triggers for...
+Errors were encountered while processing:
+ *[PACKAGE]*
+** Stepts to reporduce
+#+begin_src shell
+sudo apt-get install...
+#+end_src
+** Stetps to repair
+#+begin_src shell
+sudo rm /var/lib/dpkg/info/[PACKAGE].*
+sudo dpkg --configure -D 777 [PACKAGE]
+sudo apt -f install
+#+end_src

@@ -1,0 +1,4 @@
+#+begin_src shell
+sudo apt-get update -y
+sudo apt-get -u install -y texlive-latex-extra
+#+end_src

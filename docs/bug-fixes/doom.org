@@ -1,0 +1,18 @@
+* Time: 2021-11-18-04:35
+** Title
+doom emacs evil-collection error: No such file or directory (file-missing Cannot open load file .../.local/...)
+** Priority
+*Bad Mood Level*
+** Description
+After I pull origin/develop
+** Stepts to reporduce
+1. open doom
+2. open any project file
+3. press "SPC b B", and chose *Message*
+4. doom emacs evil-collection error: No such file or directory (file-missing Cannot open load file .../.local/...)
+** Stetps to repair
+1. comment evil modules in private init.el
+2. > doom sync
+3. > doom purge
+4. uncomment evil modules in private init.el
+5. > doom sync

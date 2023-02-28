@@ -1,0 +1,51 @@
+* roc-tw.tw
+** iPhone 手機端
+1. 下載 Shadowrocket https://alist.ptt2.su/d/taiwan/taiwanptt/iOS_and_iPad/How_to_download_Shadowrocket_from_taiwan_App_Store.pdf
+2. 設定 Shadowrocket
+   https://alist.ptt2.su/d/taiwan/taiwanptt/iOS_and_iPad/How_to_Setup_SR.pdf
+3. 登入 roc-tw.tw
+   在牆外: 直接搜索 roc-tw.tw
+   在牆內: https://154-17-7-89.nhost.00cdn.com/user
+** Linux clash gui toolkit
+1. 下載 clash_for_windows_linux_pkg
+   https://github.com/Fndroid/clash_for_windows_pkg/releases
+   選擇 Clash.for.Windows-0.20.17-x64-linux.tar.gz
+2. 導入 clash 設定
+   登入 https://154-17-7-89.nhost.00cdn.com/user
+* Ubuntu 22.04
+#+begin_src bash
+# 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy main restricted universe multiverse
+deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse
+deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse
+deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse
+
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-security main restricted universe multiverse
+deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-security main restricted universe multiverse
+
+deb http://security.ubuntu.com/ubuntu/ jammy-security main restricted universe multiverse
+deb-src http://security.ubuntu.com/ubuntu/ jammy-security main restricted universe multiverse
+
+# 预发布软件源，不建议启用
+# deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-proposed main restricted universe multiverse
+# # deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-proposed main restricted universe multiverse
+#+end_src
+* snap
+#+begin_src bash
+sudo snap set system proxy.http="//127.0.0.1"
+sudo snap set system proxy.https="//127.0.0.1"
+#+end_src
+* emacs
+#+begin_src elisp
+;; proxy
+(setq url-proxy-services
+      '(("http" . "127.0.0.1:7890")
+        ("https" . "127.0.0.1:7890")))
+#+end_src
+* git
+#+begin_src bash
+git config --global http.proxy 128.0.0.1:7890
+git config --global https.proxy 128.0.0.1:7890
+#+end_src
